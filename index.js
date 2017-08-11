@@ -3,10 +3,10 @@ var Twitter = require('twitter');
 
 var router = express.Router(); 
 var client = new Twitter({
-  consumer_key: process.ENV.consumer,
-  consumer_secret: process.ENV.consumer_secret,
-  access_token_key: process.ENV.token,
-  access_token_secret: process.ENV.token_secret
+  consumer_key: process.ENV.CONSUMER,
+  consumer_secret: process.ENV.CONSUMER_SECRET,
+  access_token_key: process.ENV.TOKEN,
+  access_token_secret: process.ENV.TOKEN_SECRET
 });
 
 var senator = "SenWarren"; // set to senator handle
