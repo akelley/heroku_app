@@ -17,7 +17,16 @@ router.use(function(req, res, next){
   next();
 })
 
+res.set
+
 router.get('/', function(req, res, next){  // https://dev.twitter.com/rest/reference/get/statuses/user_timelinz
+
+  res.set({
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "text/javascript; charset=UTF-8",
+    "Cache-Control": "public, max-age-28800"
+  });
+
   console.log(req.query);
   client.get('statuses/user_timeline', { screen_name: senator, count: 5 }, function(error, tweets, response) {
     if (!error) {
