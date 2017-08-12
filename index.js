@@ -29,10 +29,10 @@ router.get('/', function(req, res, next){  // https://dev.twitter.com/rest/refer
   client.get('statuses/user_timeline', { screen_name: senator, count: 5 }, function(error, tweets, response) {
     if (!error) {
       //res.status(200).render('index', { title: 'Express', tweets: tweets });
-      res.status(200).json({ tweets });
+      res.status(200).jsonp({ tweets });
     }
     else {
-      res.status(500).json({ error: error });
+      res.status(500).jsonp({ error: error });
     }
   });
 });
