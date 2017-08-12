@@ -10,8 +10,8 @@ var client = new Twitter({
 });
 
 router.get('/', function(req, res, next){  // https://dev.twitter.com/rest/reference/get/statuses/user_timeline
-  var senID = req.query.q;
-  client.get('statuses/user_timeline', { screen_name: senID, count: 5 }, function(error, tweets, response) {
+  var handle = req.query.q;
+  client.get('statuses/user_timeline', { screen_name: handle, count: 5 }, function(error, tweets, response) {
     
     if (!error) {
       //res.status(200).render('index', { title: 'Express', tweets: tweets });
