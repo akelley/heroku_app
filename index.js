@@ -11,19 +11,19 @@ var client = new Twitter({
 
 var senator = "SenWarren"; // set to senator handle
 
-router.use(function(req, res, next){
-  res.header("Access-Control-Allow-Origin: *");
-  res.header("Access-Control-Allow-Origin-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-})
+// router.use(function(req, res, next){
+//   res.header("Access-Control-Allow-Origin: *");
+//   res.header("Access-Control-Allow-Origin-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// })
 
 router.get('/', function(req, res, next){  // https://dev.twitter.com/rest/reference/get/statuses/user_timelinz
 
-  res.set({
-    "Access-Control-Allow-Origin": "*",
-    "Content-Type": "text/javascript; charset=UTF-8",
-    "Cache-Control": "public, max-age-28800"
-  });
+  // res.set({
+  //   "Access-Control-Allow-Origin": "*",
+  //   "Content-Type": "text/javascript; charset=UTF-8",
+  //   "Cache-Control": "public, max-age-28800"
+  // });
 
   console.log(req.query);
   client.get('statuses/user_timeline', { screen_name: senator, count: 5 }, function(error, tweets, response) {
