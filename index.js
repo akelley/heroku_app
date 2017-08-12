@@ -17,8 +17,6 @@ router.use(function(req, res, next){
   next();
 })
 
-res.set
-
 router.get('/', function(req, res, next){  // https://dev.twitter.com/rest/reference/get/statuses/user_timelinz
 
   res.set({
